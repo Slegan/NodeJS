@@ -7,8 +7,10 @@ function reverser() {
     process.stdout.write(reversedOutput + '\n');
   })
   
-  process.stdin.on('close', () => {
+  process.stdin.on('SIGINT', () => {
     process.stdout.write('task1 end');
+
+    process.exit();
   })
 }
 
