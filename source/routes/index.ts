@@ -16,7 +16,6 @@ router
 router
   .get('/users/:id', (req: Request, res: Response) => {
     console.log(cache.has(req.params.id), req.params.id);
-    
     res.send(cache.get(req.params.id));
   })
   .delete('/users/:id', (req: Request, res: Response) => {
@@ -38,11 +37,18 @@ router
 
 router
   .post('/users/create', 
-  validator.body(UserSchema),
-  (req: Request, res: Response) => {
-    cache.set(req.body.id, req.body, 1000)
-    console.log(cache.keys(), cache.has(req.body.id));
-    res.send(`User with id:${req.body.id} was added`);
+    validator.body(UserSchema),
+    (req: Request, res: Response) => {
+      cache.set(req.body.id, req.body, 1000)
+      console.log(cache.keys(), cache.has(req.body.id));
+      res.send(`User with id:${req.body.id} was added`);
+  })
+  .put('/users/create', 
+    validator.body(UserSchema),
+    (req: Request, res: Response) => {
+      cache.set(req.body.id, req.body, 1000)
+      console.log(cache.keys(), cache.has(req.body.id));
+      res.send(`User with id:${req.body.id} was updated`);
   })
 
 router
