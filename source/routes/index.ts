@@ -36,24 +36,8 @@ router
   })
 
 router
-  .post('/users/create', 
-    validator.body(UserSchema),
-    (req: Request, res: Response) => {
-      cache.set(req.body.id, req.body, 1000)
-      console.log(cache.keys(), cache.has(req.body.id));
-      res.send(`User with id:${req.body.id} was added`);
-  })
-  .put('/users/create', 
-    validator.body(UserSchema),
-    (req: Request, res: Response) => {
-      cache.set(req.body.id, req.body, 1000)
-      console.log(cache.keys(), cache.has(req.body.id));
-      res.send(`User with id:${req.body.id} was updated`);
-  })
-
-router
   .get('/users',
-  (req: Request<any, any, any, UserListRequest>, res: Response) => {
+    (req: Request<any, any, any, UserListRequest>, res: Response) => {
     console.log(req.query);
 
     const { limit, login } = req.query;
@@ -69,6 +53,20 @@ router
     console.log(userList);
 
     res.send(userList.sort((a,b) => a.login > b.login ? 1 : -1).slice(0 , limit));
+  })
+  .post('/users', 
+    validator.body(UserSchema),
+    (req: Request, res: Response) => {
+      cache.set(req.body.id, req.body, 1000)
+      console.log(cache.keys(), cache.has(req.body.id));
+      res.send(`User with id:${req.body.id} was added`);
+  })
+  .put('/users', 
+    validator.body(UserSchema),
+    (req: Request, res: Response) => {
+      cache.set(req.body.id, req.body, 1000)
+      console.log(cache.keys(), cache.has(req.body.id));
+      res.send(`User with id:${req.body.id} was updated`);
   })
 
 export default router;
