@@ -16,7 +16,13 @@ router
 router
   .get('/users/:id', (req: Request, res: Response) => {
     console.log(cache.has(req.params.id), req.params.id);
-    res.send(cache.get(req.params.id));
+    if (cache.has(req.params.id)) {
+      res.send(cache.get(req.params.id));
+    } else {
+      res.status(404).json({
+        message: `User with id ${req.params.id} not exist`
+      })
+    }
   })
   .delete('/users/:id', (req: Request, res: Response) => {
     console.log(req.params.id);
