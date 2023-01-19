@@ -109,7 +109,6 @@ class UserController implements Controller {
     try {
       list.forEach(async (user: User) => {
         const { age, id, isDeleted, login, password } = user;
-        console.log('la');
         
         await this.userService.createDefaultUsers(age, id, isDeleted, login, password)
           .then(() => {
