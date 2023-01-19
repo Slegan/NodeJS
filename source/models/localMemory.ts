@@ -1,7 +1,7 @@
 import { Request, Response  } from "express";
 import NodeCache from "node-cache";
 
-import { User, UserListRequest } from '../interfaces/user';
+import { User, UserListRequest } from '../types/user';
 
 const cache = new NodeCache();
 
