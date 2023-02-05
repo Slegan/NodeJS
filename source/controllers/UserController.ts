@@ -40,8 +40,6 @@ class UserController implements Controller {
   }
 
   getUserById = async (req: Request, res: Response) => {
-    console.log('123');
-    
     const id = parseInt(req.params.id);
 
     await this.userService.getUserById(id)

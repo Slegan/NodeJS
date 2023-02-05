@@ -1,4 +1,4 @@
-import { pool } from "../model/postgres"
+import { pool } from "../models/postgres"
 
 export default class UserService {
   getUsers = () => pool.query('SELECT * FROM users')
