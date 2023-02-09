@@ -1,4 +1,5 @@
-import { Router, Request, Response  } from "express";
+import { Router, Request, Response, NextFunction } from "express";
+import HttpException from "../handlers/exceptions/HttpException";
 
 import Controller from "../interfaces/controller";
 import GroupService from '../services/GroupService'
@@ -22,19 +23,17 @@ class GroupController implements Controller {
     this.router.delete(`${this.path}/:id`, this.deleteGroup);
   }
 
-  getGroups = async (req: Request, res: Response) => {
+  getGroups = async (req: Request, res: Response, next: NextFunction) => {
     await this.groupService.getGroups()
       .then((groups: any) => {
         res.status(200).json(groups.rows)
       })
       .catch((error: Error) => {
-        res.status(404).json({
-          message: `groups not exist, ${error}`
-        })
+        next(new HttpException(404, String(error), 'getGroups'));
       })
   }
 
-  getGroupById = async (req: Request, res: Response) => {
+  getGroupById = async (req: Request, res: Response, next: NextFunction) => {
     const id = parseInt(req.params.id);
 
     await this.groupService.getGroupById(id)
@@ -42,13 +41,11 @@ class GroupController implements Controller {
         res.status(200).json(groups.rows)
       })
       .catch((error: Error) => {
-        res.status(404).json({
-          message: `group with id ${id} not exist, ${error}`
-        })
+        next(new HttpException(404, `group with id ${id} not exist, ${error}`, 'getGroupById'));
       })
   }
 
-  createGroup = async (req: Request, res: Response) => {
+  createGroup = async (req: Request, res: Response, next: NextFunction) => {
     const { id, name, permissions } = req.body;
   
     await this.groupService.createGroup( id, name, permissions )
@@ -56,13 +53,11 @@ class GroupController implements Controller {
         res.status(201).send(`group added with ID: ${groups?.rows[0].id}`)
       })
       .catch((error: Error) => {
-        res.status(400).json({
-          message: `group not created, ${error}`
-        })
+        next(new HttpException(400, `group with params ${id}, ${name}, ${permissions} not created, ${error}`, 'createGroup'));
       })
   }
 
-  updateGroup = async (req: Request, res: Response) => {
+  updateGroup = async (req: Request, res: Response, next: NextFunction) => {
     const { id, name, permissions } = req.body;
 
     await this.groupService.updateGroup(id, name, permissions)
@@ -70,13 +65,11 @@ class GroupController implements Controller {
         res.status(200).send(`group modified with ID: ${id}`)
       })
       .catch((error: Error) => {
-        res.status(400).json({
-          message: `group not updated, ${error}`
-        })
+        next(new HttpException(400, `group with params ${id}, ${name}, ${permissions} not updated, ${error}`, 'updateGroup'));
       })
   }
 
-  deleteGroup = async (req: Request, res: Response) => {
+  deleteGroup = async (req: Request, res: Response, next: NextFunction) => {
     const id = parseInt(req.params.id);
 
     await this.groupService.deleteGroup(id)
@@ -84,27 +77,19 @@ class GroupController implements Controller {
         res.status(200).send(`group deleted with ID: ${id}`)
       })
       .catch((error: Error) => {
-        res.status(400).json({
-          message: `group not deleted, ${error}`
-        })
+        next(new HttpException(400, `group not deleted, ${error}`, 'deleteGroup'));
       })
   }
 
-  addUsersToGroup = async (req: Request, res: Response) => {
+  addUsersToGroup = async (req: Request, res: Response, next: NextFunction) => {
     const { users_id, group_id } = req.body;
-
-    console.log(users_id, group_id,typeof users_id, typeof group_id);
-    
-    
 
     await this.groupService.addUsersToGroup(users_id, group_id)
       .then(() => {
         res.status(200).send(`user with ID: ${users_id} added to group with ID: ${group_id}`)
       })
       .catch((error: Error) => {
-        res.status(400).json({
-          message: `user not added to the group, ${error}`
-        })
+        next(new HttpException(400, `user not added to the group, ${error}`, 'addUsersToGroup'));
       })
   }
 }

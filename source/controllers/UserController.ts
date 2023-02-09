@@ -1,5 +1,6 @@
-import { Router, Request, Response  } from "express";
+import { Router, Request, Response, NextFunction } from "express";
 import { createValidator } from 'express-joi-validation';
+import HttpException from "../handlers/exceptions/HttpException";
 
 import Controller from "../interfaces/controller";
 import { UserSchema } from "../schemas/validation";
@@ -27,19 +28,17 @@ class UserController implements Controller {
     this.router.delete(`${this.path}/:id`, this.deleteUser);
   }
 
-  getUsers = async (req: Request, res: Response) => {
+  getUsers = async (req: Request, res: Response, next: NextFunction) => {
     await this.userService.getUsers()
       .then((users: any) => {
         res.status(200).json(users.rows)
       })
       .catch((error: Error) => {
-        res.status(404).json({
-          message: `Users not exist, ${error}`
-        })
+        next(new HttpException(400, `Users not exist, ${error}`, 'getUsers'));
       })
   }
 
-  getUserById = async (req: Request, res: Response) => {
+  getUserById = async (req: Request, res: Response, next: NextFunction) => {
     const id = parseInt(req.params.id);
 
     await this.userService.getUserById(id)
@@ -47,13 +46,11 @@ class UserController implements Controller {
         res.status(200).json(users.rows)
       })
       .catch((error: Error) => {
-        res.status(404).json({
-          message: `User with id ${id} not exist, ${error}`
-        })
+        next(new HttpException(400, `User with id ${id} not exist, ${error}`, 'getUserById'));
       })
   }
 
-  createUser = async (req: Request, res: Response) => {
+  createUser = async (req: Request, res: Response, next: NextFunction) => {
     const { age, id, isDeleted, login, password } = req.body;
   
     await this.userService.createUser(age, id, isDeleted, login, password)
@@ -61,13 +58,14 @@ class UserController implements Controller {
         res.status(201).send(`User added with ID: ${users?.rows[0].id}`)
       })
       .catch((error: Error) => {
+        next(new HttpException(400, `User not created, ${error}, params: ${age}, ${id}, ${isDeleted}, ${login}, ${password}`, 'createUser'));
         res.status(400).json({
           message: `User not created, ${error}`
         })
       })
   }
 
-  updateUser = async (req: Request, res: Response) => {
+  updateUser = async (req: Request, res: Response, next: NextFunction) => {
     const { age, id, isDeleted, login, password } = req.body;
 
     await this.userService.updateUser(age, id, isDeleted, login, password)
@@ -75,13 +73,11 @@ class UserController implements Controller {
         res.status(200).send(`User modified with ID: ${id}`)
       })
       .catch((error: Error) => {
-        res.status(400).json({
-          message: `User not updated, ${error}`
-        })
+        next(new HttpException(400, `User not updated, ${error}, params: ${age}, ${id}, ${isDeleted}, ${login}, ${password}`, 'updateUser'));
       })
   }
 
-  deleteUser = async (req: Request, res: Response) => {
+  deleteUser = async (req: Request, res: Response, next: NextFunction) => {
     const id = parseInt(req.params.id);
 
     await this.userService.deleteUser(id)
@@ -89,13 +85,11 @@ class UserController implements Controller {
         res.status(200).send(`User deleted with ID: ${id}`)
       })
       .catch((error: Error) => {
-        res.status(400).json({
-          message: `User not deleted, ${error}`
-        })
+        next(new HttpException(400, `User not deleted, ${error}`, 'deleteUser'));
       })
   }
 
-  createDefaultUsers = (req: Request, res: Response) => {
+  createDefaultUsers = (req: Request, res: Response, next: NextFunction) => {
     const list: User[] = [
       {age: 5, id: '15', isDeleted: false, login: 'test1', password: 'test1'},
       {age: 6, id: '16', isDeleted: false, login: 'test2', password: 'test2'},
@@ -120,9 +114,7 @@ class UserController implements Controller {
           })
       })
     } catch (error) {
-      res.status(400).json({
-        message: `${error}`
-      })
+      next(new HttpException(400, `User default list not created, ${error}`, 'createDefaultUsers'));
     }
   
     res.send(`Users default list was created`)

@@ -1,0 +1,48 @@
+[32minfo[39m: Server started {"timestamp":"2023-02-08T20:59:43.343Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-08T20:59:48.179Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: GET /users
+                                 {"timestamp":"2023-02-08T21:00:08.075Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-02-08T21:00:21.247Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: POST /users
+                                 body: {"id":"123","login":"Alex","password":"123AlexPassword","age":5,"isDeleted":false}
+                                 {"timestamp":"2023-02-08T21:00:58.234Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-08T21:17:44.354Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-08T21:19:49.140Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-08T21:21:58.025Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: PUT /users
+                                 body: {"id":"123","login":"Alex","password":"123AlexPassword","age":555,"isDeleted":false}
+                                 {"timestamp":"2023-02-08T21:24:48.889Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-08T21:25:01.927Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-08T21:34:45.233Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-09T09:19:30.725Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: GET /groups
+                                 {"timestamp":"2023-02-09T09:19:40.595Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: GET /groups
+                                 {"timestamp":"2023-02-09T09:20:01.703Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: GET /groups
+                                 {"timestamp":"2023-02-09T09:20:05.390Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: GET /groups
+                                 {"timestamp":"2023-02-09T09:20:07.559Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: GET /groups
+                                 {"timestamp":"2023-02-09T09:20:09.163Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: GET /groups/123
+                                 {"timestamp":"2023-02-09T09:20:17.437Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: GET /groups/1234
+                                 {"timestamp":"2023-02-09T09:20:33.209Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: GET /groups/1234
+                                 {"timestamp":"2023-02-09T09:24:16.460Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: GET /groups/
+                                 {"timestamp":"2023-02-09T09:24:21.995Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: POST /groups
+                                 body: {"id":"1234","name":"Alex","permissions":["READ"]}
+                                 {"timestamp":"2023-02-09T09:24:48.159Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-09T09:44:42.678Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-09T09:49:21.484Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-09T09:51:25.498Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-09T09:51:29.699Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-09T09:52:28.735Z"}
+[32minfo[39m: Server started {"timestamp":"2023-02-09T09:52:33.438Z"}
+[32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: POST /groups/addUsersToGroup
+                                 body: {"users_id":["1234","12345"],"group_id":"123"}
+                                 {"timestamp":"2023-02-09T09:52:53.163Z"}
