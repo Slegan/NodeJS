@@ -46,3 +46,247 @@
 [32minfo[39m: Thu Feb 09 2023 ---------- REQUEST: POST /groups/addUsersToGroup
                                  body: {"users_id":["1234","12345"],"group_id":"123"}
                                  {"timestamp":"2023-02-09T09:52:53.163Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T13:06:18.478Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users
+                                 {"timestamp":"2023-03-05T13:06:34.288Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T13:06:49.449Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T13:35:38.428Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T13:35:45.987Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users
+                                 {"timestamp":"2023-03-05T13:36:28.399Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /hello?name=Alex
+                                 {"timestamp":"2023-03-05T13:37:22.120Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {}
+                                 {"timestamp":"2023-03-05T13:39:32.683Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {}
+                                 {"timestamp":"2023-03-05T13:40:55.306Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T13:42:33.720Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T13:42:38.633Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {}
+                                 {"timestamp":"2023-03-05T13:42:46.682Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T13:43:04.282Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users
+                                 {"timestamp":"2023-03-05T13:43:12.311Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T13:45:29.491Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {}
+                                 {"timestamp":"2023-03-05T13:46:29.523Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T13:47:24.533Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {}
+                                 {"timestamp":"2023-03-05T13:47:28.176Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {}
+                                 {"timestamp":"2023-03-05T13:48:26.149Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T13:49:31.457Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {}
+                                 {"timestamp":"2023-03-05T13:49:38.835Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T13:51:22.421Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /users
+                                 body: {"id":"123","login":"Alex","password":"123AlexPassword","age":5,"isDeleted":false}
+                                 {"timestamp":"2023-03-05T13:51:57.496Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {}
+                                 {"timestamp":"2023-03-05T14:03:04.979Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {}
+                                 {"timestamp":"2023-03-05T14:04:04.183Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {}
+                                 {"timestamp":"2023-03-05T14:04:33.864Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {}
+                                 {"timestamp":"2023-03-05T14:04:40.484Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"aa":"lala"}
+                                 {"timestamp":"2023-03-05T14:05:05.194Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:05:24.196Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:06:38.704Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:06:41.111Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:07:02.446Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:07:04.786Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:08:18.704Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users
+                                 {"timestamp":"2023-03-05T14:08:23.214Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:08:30.630Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users
+                                 {"timestamp":"2023-03-05T14:08:31.530Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:48:59.724Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:49:04.170Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:51:26.587Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:51:29.051Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:52:17.222Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:52:20.247Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:53:21.177Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:53:23.826Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:53:36.553Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:53:41.738Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:53:44.685Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:54:23.412Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:54:25.854Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T14:56:38.140Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:57:00.749Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T14:57:02.142Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:57:56.751Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:58:06.739Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:58:36.829Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T14:58:39.501Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:59:34.407Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T14:59:50.129Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T14:59:57.366Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:01:40.549Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:01:45.213Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:01:48.036Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:03:01.851Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:03:06.831Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:03:17.358Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:04:23.369Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:04:35.553Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /users
+                                 body: {"id":"123","login":"Alex","password":"123AlexPassword","age":5,"isDeleted":false}
+                                 {"timestamp":"2023-03-05T15:04:40.645Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:05:35.657Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:25:24.660Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:25:29.726Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:27:51.907Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:27:56.564Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:28:09.057Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:28:41.393Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:28:44.750Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:29:15.236Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:29:17.393Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:30:02.073Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:30:05.334Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:30:20.678Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:30:48.977Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:30:50.674Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:31:14.155Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:32:25.273Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:32:40.484Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:32:42.645Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:33:24.870Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:33:28.899Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:34:05.108Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:34:09.563Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:35:05.918Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:35:08.220Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:36:54.261Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:36:57.358Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:37:57.642Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:38:12.972Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:38:15.552Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:40:49.413Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:40:54.075Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:41:04.583Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:42:29.257Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:42:34.608Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:42:36.970Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:45:42.086Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:47:13.747Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:47:46.520Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T15:47:51.159Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:48:12.780Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T15:48:17.895Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T15:50:53.229Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T15:51:05.520Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T15:51:46.815Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:52:32.273Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T15:52:34.264Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:55:19.874Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T15:55:22.397Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:56:52.023Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T15:56:56.490Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T15:57:06.679Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T16:18:30.678Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: GET /users/12345
+                                 {"timestamp":"2023-03-05T16:19:02.363Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /users
+                                 body: {"id":"1234","login":"Alexandr","password":"123AlexPassword","age":60,"isDeleted":false}
+                                 {"timestamp":"2023-03-05T16:20:28.263Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T16:22:24.248Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-05T16:22:51.874Z"}
+[32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-05T16:22:59.788Z"}

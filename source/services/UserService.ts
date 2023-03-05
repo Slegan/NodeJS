@@ -33,8 +33,15 @@ export default class UserService {
     isDeleted: boolean,
     login: string,
     password: string
-  ) => pool.query(
-    'INSERT INTO users (age, id, "isDeleted", login, password) VALUES ($1, $2, $3, $4, $5)',
-    [ age, id, isDeleted, login, password ]
-  )
+    ) => pool.query(
+      'INSERT INTO users (age, id, "isDeleted", login, password) VALUES ($1, $2, $3, $4, $5)',
+      [ age, id, isDeleted, login, password ]
+    )
+  getUserByLoginAndPassword = (
+    login: string,
+    password: string
+    ) => pool.query(
+      'SELECT * FROM users WHERE login = $1 AND password = $2 LIMIT 1',
+      [login, password]
+    )
 }

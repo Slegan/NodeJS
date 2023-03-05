@@ -7,6 +7,7 @@ import GroupService from './services/GroupService';
 import logger from './models/logger';
 import loggerMiddleware from './handlers/logging/loggerMiddleware';
 import errorMiddleware from './handlers/exceptions/errorMiddleware';
+import AuthenticationController from './controllers/AuthenticationController'
 
 const app: Express = express();
 
@@ -22,6 +23,7 @@ app.use(errorMiddleware)
     logger.error(error);
   });
 
+app.use('/', new AuthenticationController().router);
 app.use('/', new UserController(new UserService()).router);
 app.use('/', new GroupController(new GroupService()).router);
 

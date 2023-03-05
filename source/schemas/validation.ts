@@ -8,4 +8,12 @@ const UserSchema = Joi.object({
   password: Joi.string().alphanum().required(),
 });
 
-export { UserSchema }
+const validateLogInData = Joi.object().keys({
+  login: Joi.string().required(),
+  password: Joi.string().required()
+});
+
+export {
+  UserSchema,
+  validateLogInData,
+}

@@ -2,7 +2,8 @@ import { Router, Request, Response, NextFunction } from "express";
 import HttpException from "../handlers/exceptions/HttpException";
 
 import Controller from "../interfaces/controller";
-import GroupService from '../services/GroupService'
+import GroupService from "../services/GroupService";
+import authMiddleware from "../handlers/auth/authMiddleWare";
 
 class GroupController implements Controller {
   path = '/groups';
@@ -15,12 +16,12 @@ class GroupController implements Controller {
   }
 
   initRouters() {
-    this.router.get(`${this.path}`, this.getGroups);
-    this.router.post(`${this.path}`,  this.createGroup);
-    this.router.put(`${this.path}`, this.updateGroup);
-    this.router.post(`${this.path}/addUsersToGroup`, this.addUsersToGroup);
-    this.router.get(`${this.path}/:id`, this.getGroupById);
-    this.router.delete(`${this.path}/:id`, this.deleteGroup);
+    this.router.get(`${this.path}`, authMiddleware(), this.getGroups);
+    this.router.post(`${this.path}`, authMiddleware(),  this.createGroup);
+    this.router.put(`${this.path}`, authMiddleware(), this.updateGroup);
+    this.router.post(`${this.path}/addUsersToGroup`, authMiddleware(), this.addUsersToGroup);
+    this.router.get(`${this.path}/:id`, authMiddleware(), this.getGroupById);
+    this.router.delete(`${this.path}/:id`, authMiddleware(), this.deleteGroup);
   }
 
   getGroups = async (req: Request, res: Response, next: NextFunction) => {

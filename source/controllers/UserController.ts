@@ -4,8 +4,9 @@ import HttpException from "../handlers/exceptions/HttpException";
 
 import Controller from "../interfaces/controller";
 import { UserSchema } from "../schemas/validation";
-import UserService from '../services/UserService'
+import UserService from "../services/UserService";
 import { User } from "../types/user";
+import authMiddleware from "../handlers/auth/authMiddleWare"
 
 const validator = createValidator();
 
@@ -20,17 +21,19 @@ class UserController implements Controller {
   }
 
   initRouters() {
-    this.router.get(`${this.path}`, this.getUsers);
-    this.router.post(`${this.path}`, validator.body(UserSchema), this.createUser);
-    this.router.put(`${this.path}`, validator.body(UserSchema), this.updateUser);
-    this.router.get(`${this.path}/create`, this.createDefaultUsers);
-    this.router.get(`${this.path}/:id`, this.getUserById);
-    this.router.delete(`${this.path}/:id`, this.deleteUser);
+    this.router.get(`${this.path}`, authMiddleware(), this.getUsers);
+    this.router.post(`${this.path}`, authMiddleware(), validator.body(UserSchema), this.createUser);
+    this.router.put(`${this.path}`, authMiddleware(), validator.body(UserSchema), this.updateUser);
+    this.router.get(`${this.path}/create`, authMiddleware(), this.createDefaultUsers);
+    this.router.get(`${this.path}/:id`, authMiddleware(), this.getUserById);
+    this.router.delete(`${this.path}/:id`, authMiddleware(), this.deleteUser);
   }
 
   getUsers = async (req: Request, res: Response, next: NextFunction) => {
     await this.userService.getUsers()
       .then((users: any) => {
+        console.log(users);
+        
         res.status(200).json(users.rows)
       })
       .catch((error: Error) => {
@@ -43,6 +46,8 @@ class UserController implements Controller {
 
     await this.userService.getUserById(id)
       .then((users: any) => {
+        console.log(users.rows);
+        
         res.status(200).json(users.rows)
       })
       .catch((error: Error) => {
