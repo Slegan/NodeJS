@@ -32,7 +32,6 @@ class UserController implements Controller {
   getUsers = async (req: Request, res: Response, next: NextFunction) => {
     await this.userService.getUsers()
       .then((users: any) => {
-        console.log(users);
         
         res.status(200).json(users.rows)
       })
@@ -46,7 +45,6 @@ class UserController implements Controller {
 
     await this.userService.getUserById(id)
       .then((users: any) => {
-        console.log(users.rows);
         
         res.status(200).json(users.rows)
       })
