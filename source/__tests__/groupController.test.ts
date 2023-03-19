@@ -1,17 +1,25 @@
 import { groups, mock } from "../models/__mocks__";
+import { Request, Response, NextFunction } from "express";
 import "regenerator-runtime/runtime";
 import GroupController from "../controllers/GroupController";
 
 describe("Group Controller", () => {
   it("Get All Groups", async () => {
+    // const request = mock.request<typeof Request>();
     const request = mock.request();
     const response = mock.response();
+    const next = mock.next();
 
     const groupService = {
       getGroups: jest.fn().mockResolvedValue(groups),
+      getGroupById: jest.fn(),
+      createGroup: jest.fn(),
+      updateGroup: jest.fn(),
+      deleteGroup: jest.fn(),
+      addUsersToGroup: jest.fn(),
     };
 
-    await new GroupController(groupService).getAllGroups(request, response);
+    await new GroupController(groupService).getGroups(request, response, next);
 
     expect(response.send).toHaveBeenCalledTimes(1);
     expect(response.send).toHaveBeenCalledWith(groups);
@@ -26,6 +34,11 @@ describe("Group Controller", () => {
 
     const groupService = {
       getGroupById: jest.fn().mockResolvedValue(groups[0]),
+      getGroups: jest.fn(),
+      createGroup: jest.fn(),
+      updateGroup: jest.fn(),
+      deleteGroup: jest.fn(),
+      addUsersToGroup: jest.fn(),
     };
 
     await new GroupController(groupService).getGroupById(
@@ -47,6 +60,11 @@ describe("Group Controller", () => {
 
     const groupService = {
       getGroupById: jest.fn().mockResolvedValue(undefined),
+      getGroups: jest.fn(),
+      createGroup: jest.fn(),
+      updateGroup: jest.fn(),
+      deleteGroup: jest.fn(),
+      addUsersToGroup: jest.fn(),
     };
 
     await new GroupController(groupService).getGroupById(
@@ -65,6 +83,7 @@ describe("Group Controller", () => {
     const next = mock.next();
 
     const newGroup = {
+      id: "123_123_123",
       permissions: ["DELETE", "SHARE", "READ", "UPLOAD_FILES", "WRITE"],
       name: "MODERATOR",
     };
@@ -73,6 +92,11 @@ describe("Group Controller", () => {
 
     const groupService = {
       createGroup: jest.fn().mockResolvedValue(groups[0]),
+      getGroups: jest.fn(),
+      getGroupById: jest.fn(),
+      updateGroup: jest.fn(),
+      deleteGroup: jest.fn(),
+      addUsersToGroup: jest.fn(),
     };
 
     await new GroupController(groupService).createGroup(
@@ -95,9 +119,15 @@ describe("Group Controller", () => {
 
     const groupService = {
       updateGroupById: jest.fn().mockResolvedValue(1),
+      getGroups: jest.fn(),
+      createGroup: jest.fn(),
+      updateGroup: jest.fn(),
+      deleteGroup: jest.fn(),
+      addUsersToGroup: jest.fn(),
+      getGroupById: jest.fn(),
     };
 
-    await new GroupController(groupService).updateGroupById(
+    await new GroupController(groupService).updateGroup(
       request,
       response,
       next
@@ -115,9 +145,15 @@ describe("Group Controller", () => {
 
     const groupService = {
       deleteGroupById: jest.fn().mockResolvedValue(groups[0]),
+      getGroups: jest.fn(),
+      createGroup: jest.fn(),
+      updateGroup: jest.fn(),
+      deleteGroup: jest.fn(),
+      addUsersToGroup: jest.fn(),
+      getGroupById: jest.fn(),
     };
 
-    await new GroupController(groupService).deleteGroupById(
+    await new GroupController(groupService).deleteGroup(
       request,
       response,
       next
@@ -139,6 +175,11 @@ describe("Group Controller", () => {
 
     const groupService = {
       addUsersToGroup: jest.fn().mockResolvedValue(groups[0]),
+      getGroups: jest.fn(),
+      createGroup: jest.fn(),
+      updateGroup: jest.fn(),
+      deleteGroup: jest.fn(),
+      getGroupById: jest.fn(),
     };
 
     await new GroupController(groupService).addUsersToGroup(
