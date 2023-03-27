@@ -10,8 +10,7 @@ export const passportConfig = passport.use(new BearerStrategy((token: string, do
   let payload;
   const userService = new UserService();
   try {
-    payload = jwt.verify(token, 'secret-key');
-    // payload = jwt.verify(token, process.env.JWT_SECRET);
+    payload = jwt.verify(token, process.env.JWT_SECRET);
   } catch (error) {
     // JWT Expired
     return done(error);

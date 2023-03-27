@@ -290,3 +290,28 @@
 [32minfo[39m: Sun Mar 05 2023 ---------- REQUEST: POST /auth/login
                                  body: {"login":"Alex","password":"123AlexPassword"}
                                  {"timestamp":"2023-03-05T16:22:59.788Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-27T09:39:21.204Z"}
+[32minfo[39m: Server started {"timestamp":"2023-03-27T09:40:22.096Z"}
+[32minfo[39m: Server started at port undefined {"timestamp":"2023-03-27T09:42:10.168Z"}
+[32minfo[39m: Server started at port undefined {"timestamp":"2023-03-27T09:42:18.618Z"}
+[32minfo[39m: Server started at port 8000 {"timestamp":"2023-03-27T09:43:58.824Z"}
+[32minfo[39m: Mon Mar 27 2023 ---------- REQUEST: GET /users
+                                 {"timestamp":"2023-03-27T09:45:28.299Z"}
+[32minfo[39m: Server started at port 8000 {"timestamp":"2023-03-27T09:45:55.781Z"}
+[32minfo[39m: Mon Mar 27 2023 ---------- REQUEST: GET /users
+                                 {"timestamp":"2023-03-27T09:45:58.848Z"}
+[32minfo[39m: Mon Mar 27 2023 ---------- REQUEST: GET /users
+                                 {"timestamp":"2023-03-27T09:46:56.894Z"}
+[32minfo[39m: Mon Mar 27 2023 ---------- REQUEST: POST /auth/login
+                                 body: {"login":"Alex","password":"123AlexPassword"}
+                                 {"timestamp":"2023-03-27T09:47:10.835Z"}
+[32minfo[39m: Mon Mar 27 2023 ---------- REQUEST: GET /users
+                                 {"timestamp":"2023-03-27T09:47:14.496Z"}
+[32minfo[39m: Mon Mar 27 2023 ---------- REQUEST: POST /users
+                                 body: {"id":"1234","login":"Alexandr","password":"123AlexPassword","age":60,"isDeleted":false}
+                                 {"timestamp":"2023-03-27T09:47:17.814Z"}
+[32minfo[39m: Mon Mar 27 2023 ---------- REQUEST: GET /users/create
+                                 {"timestamp":"2023-03-27T09:48:00.245Z"}
+[32minfo[39m: Server started at port 8000 {"timestamp":"2023-03-27T09:48:12.831Z"}
+[32minfo[39m: Mon Mar 27 2023 ---------- REQUEST: GET /users/create
+                                 {"timestamp":"2023-03-27T09:48:19.760Z"}

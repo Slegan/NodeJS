@@ -1,4 +1,5 @@
 import express, { Express, Application } from 'express';
+import * as dotenv from 'dotenv';
 
 import UserController from './controllers/UserController';
 import UserService from './services/UserService';
@@ -10,8 +11,9 @@ import errorMiddleware from './handlers/exceptions/errorMiddleware';
 import AuthenticationController from './controllers/AuthenticationController'
 
 const app: Express = express();
+dotenv.config();
 
-app.listen(8000, () => logger.info('Server started'));
+app.listen(process.env.APP_PORT, () => logger.info(`Server started at port ${process.env.APP_PORT}`));
 
 app.use(express.json());
 app.use(loggerMiddleware())

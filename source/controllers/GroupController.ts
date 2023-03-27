@@ -1,5 +1,6 @@
 import { Router, Request, Response, NextFunction } from "express";
 import HttpException from "../handlers/exceptions/HttpException";
+import constants from "../config/constants";
 
 import Controller from "../interfaces/controller";
 import GroupService from "../services/GroupService";
@@ -51,7 +52,7 @@ class GroupController implements Controller {
   
     await this.groupService.createGroup( id, name, permissions )
       .then((groups: any) => {
-        res.status(201).send(`group added with ID: ${groups?.rows[0].id}`)
+        res.status(201).json(`${constants.GROUP_CREATED} ${groups?.rows[0].id}`)
       })
       .catch((error: Error) => {
         next(new HttpException(400, `group with params ${id}, ${name}, ${permissions} not created, ${error}`, 'createGroup'));
@@ -63,7 +64,7 @@ class GroupController implements Controller {
 
     await this.groupService.updateGroup(id, name, permissions)
       .then((groups: any) => {
-        res.status(200).send(`group modified with ID: ${id}`)
+        res.status(200).json(`${constants.GROUP_UPDATED} ${id}`)
       })
       .catch((error: Error) => {
         next(new HttpException(400, `group with params ${id}, ${name}, ${permissions} not updated, ${error}`, 'updateGroup'));
@@ -75,7 +76,7 @@ class GroupController implements Controller {
 
     await this.groupService.deleteGroup(id)
       .then(() => {
-        res.status(200).send(`group deleted with ID: ${id}`)
+        res.status(200).json(`${constants.GROUP_DELETED} ${id}`)
       })
       .catch((error: Error) => {
         next(new HttpException(400, `group not deleted, ${error}`, 'deleteGroup'));
@@ -87,7 +88,7 @@ class GroupController implements Controller {
 
     await this.groupService.addUsersToGroup(users_id, group_id)
       .then(() => {
-        res.status(200).send(`user with ID: ${users_id} added to group with ID: ${group_id}`)
+        res.status(200).json(`${constants.GROUP_ADDED_TO} ${users_id} ${constants.GROUP_ADDED_TO} ${group_id}`)
       })
       .catch((error: Error) => {
         next(new HttpException(400, `user not added to the group, ${error}`, 'addUsersToGroup'));

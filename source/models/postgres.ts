@@ -4,7 +4,7 @@ const pool = new Pool({
   host: 'localhost',
   database: 'users',
   password: '123',
-  port: 5432,
+  port: process.env.DB_PORT,
 })
 
 
