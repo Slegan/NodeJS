@@ -15,7 +15,6 @@ describe("Group Controller", () => {
     addUsersToGroup: jest.fn(),
   };
 
-  const request = mock.request();
   const response = mock.response();
   const next = mock.next();
 
@@ -30,7 +29,7 @@ describe("Group Controller", () => {
     };
 
     await new GroupController(groupService).getGroups(
-      request as unknown as Request,
+      {} as unknown as Request,
       response as unknown as Response,
       next
     );

@@ -16,7 +16,6 @@ describe("UserController", () => {
     getUserByLoginAndPassword: jest.fn(),
   };
 
-  const request = mock.request();
   const response = mock.response();
   const next = mock.next();
 
@@ -32,7 +31,7 @@ describe("UserController", () => {
     };
 
     await new UserController(userService).getUsers(
-      request as unknown as Request,
+      {} as unknown as Request,
       response as unknown as Response,
       next
     );
@@ -132,7 +131,7 @@ describe("UserController", () => {
     };
 
     await new UserController(userService).createDefaultUsers(
-      request as unknown as Request,
+      {} as unknown as Request,
       response as unknown as Response,
       next
     );
